@@ -1,0 +1,19 @@
+@use "../abstracts/" as *;
+
+@each $color, $shade-map in $color-theme-map {
+    @each $shade, $value in $shade-map {
+
+        .bg-#{$color}-#{$shade} {
+            background: #{$value};
+        }
+
+        .text-#{$color}-#{$shade} {
+            color: #{$value};
+        }
+
+        .fill-#{$color}-#{$shade} {
+            fill: #{$value};
+        }
+
+    }
+}

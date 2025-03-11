@@ -1,0 +1,115 @@
+// ========================= //
+// #region abstracts/_tokens //
+// ========================= //
+
+// -------------------------- //
+// #region _tokens/contextual //
+// -------------------------- //
+
+$bg: var(--neutral-050);
+$bg-inverse: var(--neutral-900);
+
+$text: var(--neutral-900);
+$text-inverse: var(--neutral-050);
+
+$ff-title: var(--font-family-title);
+$ff-heading: var(--font-family-heading);
+$ff-paragraph: var(--font-family-paragraph);
+
+$fs-title: var(--font-size-900);
+$fs-heading: var(--font-size-800);
+$fs-subheading: var(--font-size-600);
+$fs-paragraph: var(--font-size-400);
+$fs-small: var(--font-size-300);
+$fs-huge: calc($fs-title * 2);
+
+$fw-light: var(--font-weight-200);
+$fw-default: var(--font-weight-400);
+$fw-semibold: var(--font-weight-700);
+$fw-bold: var(--font-weight-900);
+
+$lh-extranarrow: var(--line-height-100);
+$lh-narrow: var(--line-height-200);
+$lh-default: var(--line-height-400);
+$lh-wide: var(--line-height-600);
+
+$ls-narrow: var(--letter-spacing-200);
+$ls-default: var(--letter-spacing-400);
+$ls-wide: var(--letter-spacing-600);
+
+$size-xs: var(--size-4);
+$size-sm: var(--size-8);
+$size: var(--size-16);
+$size-lg: var(--size-28);
+$size-xl: var(--size-36);
+
+$gap-xs: var(--gap-4);
+$gap-sm: var(--gap-8);
+$gap: var(--gap-16);
+$gap-lg: var(--gap-28);
+$gap-xl: var(--gap-36);
+
+$margin-xs: var(--margin-4);
+$margin-sm: var(--margin-8);
+$margin: var(--margin-16);
+$margin-lg: var(--margin-28);
+$margin-xl: var(--margin-36);
+
+$padding-xs: var(--padding-4);
+$padding-sm: var(--padding-8);
+$padding: var(--padding-16);
+$padding-lg: var(--padding-28);
+$padding-xl: var(--padding-36);
+
+$border-width-narrow: 1px;
+$border-width: 2px;
+$border-width-wide: 4px;
+$border-width-extra-wide: 8px;
+$border-style: solid;
+$border-radius: 0.5rem;
+$border-radius-sm: 0.25rem;
+
+$animation-duration: 200ms;
+
+// -------------------------- //
+// #endregion                 //
+// -------------------------- //
+
+// -------------------------- //
+// #region _tokens/components //
+// -------------------------- //
+
+// #region Links //
+$link-bg: transparent;
+$link-bg-active: var(--neutral-100);
+$link-text: var(--neutral-400);
+$link-text-active: var(--primary-400);
+$link-transition: all $animation-duration;
+// #endregion    //
+
+// #region Buttons //
+
+$button-bg: $bg;
+$button-text: $text;
+$button-padding: $padding;
+$button-border-color: transparent;
+
+// #endregion      //
+
+// #region forms //
+
+// form elements
+
+// labels
+
+// inputs, textareas
+
+// #endregion    //
+
+// -------------------------- //
+// #endregion                 //
+// -------------------------- //
+
+// ========================= //
+// #endregion                //
+// ========================= //

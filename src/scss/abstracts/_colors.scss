@@ -1,0 +1,186 @@
+@use "sass:map";
+
+// ========================= //
+// #region abstracts/_colors //
+// ========================= //
+
+// 050 -> 900 hue adjustment: --> 214
+// 050 -> 400 lightness adjustment: 0%
+// 500 -> 900 lightness adjustment: -10%
+$_blue-050: hsl(214, 79%, 92%);
+$_blue-100: hsl(214, 97%, 85%);
+$_blue-200: hsl(214, 84%, 74%);
+$_blue-300: hsl(214, 74%, 65%);
+$_blue-400: hsl(214, 65%, 55%);
+$_blue-500: hsl(214, 67%, 35%);
+$_blue-600: hsl(214, 76%, 29%);
+$_blue-700: hsl(214, 82%, 23%);
+$_blue-800: hsl(214, 87%, 19%);
+$_blue-900: hsl(214, 100%, 11%);
+
+// 050 -> 900 lightness adjustment: 0%
+$_orange-050: hsl(17, 100%, 95%);
+$_orange-100: hsl(17, 100%, 86%);
+$_orange-200: hsl(17, 92%, 76%);
+$_orange-300: hsl(16, 83%, 64%);
+$_orange-400: hsl(17, 78%, 55%);
+$_orange-500: hsl(17, 71%, 45%);
+$_orange-600: hsl(17, 74%, 38%);
+$_orange-700: hsl(17, 79%, 31%);
+$_orange-800: hsl(17, 80%, 26%);
+$_orange-900: hsl(17, 83%, 19%);
+
+// 050 -> 400 lightness adjustment: 0%
+// 500 -> 900 lightness adjustment: -10%
+$_purple-050: hsl(262, 61%, 93%);
+$_purple-100: hsl(261, 67%, 84%);
+$_purple-200: hsl(261, 54%, 68%);
+$_purple-300: hsl(261, 47%, 58%);
+$_purple-400: hsl(262, 43%, 51%);
+$_purple-500: hsl(262, 48%, 36%);
+$_purple-600: hsl(262, 60%, 28%);
+$_purple-700: hsl(262, 69%, 21%);
+$_purple-800: hsl(262, 72%, 15%);
+$_purple-900: hsl(263, 85%, 8%);
+
+$_light-blue-vivid-050: #E3F8FF;
+$_light-blue-vivid-100: #B3ECFF;
+$_light-blue-vivid-200: #81DEFD;
+$_light-blue-vivid-300: #5ED0FA;
+$_light-blue-vivid-400: #40C3F7;
+$_light-blue-vivid-500: #2BB0ED;
+$_light-blue-vivid-600: #1992D4;
+$_light-blue-vivid-700: #127FBF;
+$_light-blue-vivid-800: #0B69A3;
+$_light-blue-vivid-900: #035388;
+
+// 050 -> 900 hue adjustment: --> 276
+// 050 -> 400 lightness adjustment: 0%
+// 500 -> 900 lightness adjustment: -10%
+$_cool-grey-050: hsl(275, 33%, 97%);
+$_cool-grey-100: hsl(279, 15%, 91%);
+$_cool-grey-200: hsl(275, 16%, 82%);
+$_cool-grey-300: hsl(276, 13%, 65%);
+$_cool-grey-400: hsl(276, 10%, 53%);
+$_cool-grey-500: hsl(276, 12%, 33%);
+$_cool-grey-600: hsl(274, 14%, 27%);
+$_cool-grey-700: hsl(274, 18%, 20%);
+$_cool-grey-800: hsl(274, 20%, 15%);
+$_cool-grey-900: hsl(275, 24%, 6%);
+
+$_pink-vivid-050: #FFE3EC;
+$_pink-vivid-100: #FFB8D2;
+$_pink-vivid-200: #FF8CBA;
+$_pink-vivid-300: #F364A2;
+$_pink-vivid-400: #E8368F;
+$_pink-vivid-500: #DA127D;
+$_pink-vivid-600: #BC0A6F;
+$_pink-vivid-700: #A30664;
+$_pink-vivid-800: #870557;
+$_pink-vivid-900: #620042;
+
+$_red-vivid-050: #FFE3E3;
+$_red-vivid-100: #FFBDBD;
+$_red-vivid-200: #FF9B9B;
+$_red-vivid-300: #F86A6A;
+$_red-vivid-400: #EF4E4E;
+$_red-vivid-500: #E12D39;
+$_red-vivid-600: #CF1124;
+$_red-vivid-700: #AB091E;
+$_red-vivid-800: #8A041A;
+$_red-vivid-900: #610316;
+
+$_yellow-vivid-050: #FFFBEA;
+$_yellow-vivid-100: #FFF3C4;
+$_yellow-vivid-200: #FCE588;
+$_yellow-vivid-300: #FADB5F;
+$_yellow-vivid-400: #F7C948;
+$_yellow-vivid-500: #F0B429;
+$_yellow-vivid-600: #DE911D;
+$_yellow-vivid-700: #CB6E17;
+$_yellow-vivid-800: #B44D12;
+$_yellow-vivid-900: #8D2B0B;
+
+$_teal-vivid-050: #EFFCF6;
+$_teal-vivid-100: #C6F7E2;
+$_teal-vivid-200: #8EEDC7;
+$_teal-vivid-300: #65D6AD;
+$_teal-vivid-400: #3EBD93;
+$_teal-vivid-500: #27AB83;
+$_teal-vivid-600: #199473;
+$_teal-vivid-700: #147D64;
+$_teal-vivid-800: #0C6B58;
+$_teal-vivid-900: #014D40;
+
+$color-theme-map: (
+    "primary": ("050": $_blue-050,
+        "100": $_blue-100,
+        "200": $_blue-200,
+        "300": $_blue-300,
+        "400": $_blue-400,
+        "500": $_blue-500,
+        "600": $_blue-600,
+        "700": $_blue-700,
+        "800": $_blue-800,
+        "900": $_blue-900,
+    ),
+    "neutral": ("050": $_cool-grey-050,
+        "100": $_cool-grey-100,
+        "200": $_cool-grey-200,
+        "300": $_cool-grey-300,
+        "400": $_cool-grey-400,
+        "500": $_cool-grey-500,
+        "600": $_cool-grey-600,
+        "700": $_cool-grey-700,
+        "800": $_cool-grey-800,
+        "900": $_cool-grey-900,
+    ),
+    "supporting": ("050": $_orange-050,
+        "100": $_orange-100,
+        "200": $_orange-200,
+        "300": $_orange-300,
+        "400": $_orange-400,
+        "500": $_orange-500,
+        "600": $_orange-600,
+        "700": $_orange-700,
+        "800": $_orange-800,
+        "900": $_orange-900,
+    ),
+    "semantic-success": ("050": $_teal-vivid-100,
+        "100": $_teal-vivid-100,
+        "200": $_teal-vivid-200,
+        "300": $_teal-vivid-300,
+        "400": $_teal-vivid-400,
+        "500": $_teal-vivid-500,
+        "600": $_teal-vivid-600,
+        "700": $_teal-vivid-700,
+        "800": $_teal-vivid-800,
+        "900": $_teal-vivid-900,
+    ),
+    "semantic-warn": ("050": $_yellow-vivid-100,
+        "100": $_yellow-vivid-100,
+        "200": $_yellow-vivid-200,
+        "300": $_yellow-vivid-300,
+        "400": $_yellow-vivid-400,
+        "500": $_yellow-vivid-500,
+        "600": $_yellow-vivid-600,
+        "700": $_yellow-vivid-700,
+        "800": $_yellow-vivid-800,
+        "900": $_yellow-vivid-900,
+    ),
+    "semantic-error": ("050": $_red-vivid-100,
+        "100": $_red-vivid-100,
+        "200": $_red-vivid-200,
+        "300": $_red-vivid-300,
+        "400": $_red-vivid-400,
+        "500": $_red-vivid-500,
+        "600": $_red-vivid-600,
+        "700": $_red-vivid-700,
+        "800": $_red-vivid-800,
+        "900": $_red-vivid-900,
+    ),
+);
+
+// ========================= //
+// #endregion                //
+// ========================= //

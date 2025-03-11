@@ -1,0 +1,35 @@
+@use "../abstracts/" as *;
+
+@each $family, $value in $font-family-map {
+    .ff-#{$family} {
+        font-family: #{$value};
+    }
+}
+
+@each $size, $value in $font-size-map {
+    .fs-#{$size} {
+        font-size: #{$value};
+    }
+}
+
+@each $weight, $value in $font-weight-map {
+    .fw-#{$weight} {
+        font-weight: #{$value};
+    }
+}
+
+@each $height, $value in $line-height-map {
+    .lh-#{$height} {
+        line-height: #{$value};
+    }
+}
+
+@each $spacing, $value in $letter-spacing-map {
+    .ls-#{$spacing} {
+        letter-spacing: #{$value};
+    }
+}
+
+.capitalize {
+    text-transform: capitalize;
+}

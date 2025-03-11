@@ -1,0 +1,53 @@
+@use "../abstracts/" as *;
+
+// ================== //
+// #region base/_root //
+// ================== //
+
+:root {
+
+    // Generate Color Variables
+    @each $color, $shade-map in $color-theme-map {
+        @each $shade, $value in $shade-map {
+            --#{$color}-#{$shade}: #{$value};
+        }
+    }
+
+    // Generate Font Family Variables
+    @each $family, $value in $font-family-map {
+        --font-family-#{$family}: #{$value};
+    }
+
+    // Generate Font Size Variables
+    @each $size, $value in $font-size-map {
+        --font-size-#{$size}: #{$value};
+    }
+
+    // Generate Font Weight Variables
+    @each $weight, $value in $font-weight-map {
+        --font-weight-#{$weight}: #{$value};
+    }
+
+    // Generate Line Height Variables
+    @each $size, $value in $line-height-map {
+        --line-height-#{$size}: #{$value};
+    }
+
+    // Generate Letter Spacing Variables
+    @each $size, $value in $letter-spacing-map {
+        --letter-spacing-#{$size}: #{$value};
+    }
+
+    // Generate Spacing Variables
+    @each $size, $value in $size-map {
+        --size-#{$size}: #{$value};
+        --gap-#{$size}: #{$value};
+        --margin-#{$size}: #{$value};
+        --padding-#{$size}: #{$value};
+    }
+
+}
+
+// ================== //
+// #endregion         //
+// ================== //

@@ -1,0 +1,271 @@
+@use "../abstracts/" as *;
+
+// ===================== //
+// #region base/_general //
+// ===================== //
+
+// TODO: Write default styling for links, buttons, and form elements.
+
+// ===================== //
+// #endregion            //
+// ===================== //
+
+:where(body) {
+    background: $bg;
+    color: $text;
+
+    font-family: $ff-paragraph;
+    font-size: $fs-paragraph;
+
+    min-height: 100vh;
+}
+
+:where(div#app) {
+    position: relative;
+}
+
+:where(main) {
+    min-height: 100vh;
+}
+
+// ------------- //
+// #region links //
+// ------------- //
+
+:where(a) {
+    --bg: #{$link-bg};
+    --text: #{$link-text};
+
+    background: var(--bg);
+    color: var(--text);
+    text-decoration-color: var(--bg);
+
+    transition: $link-transition;
+}
+
+:where(a:hover, a:focus) {
+    text-decoration-color: var(--text);
+}
+
+:where(a:visited) {
+    --text: var(--supporting-700);
+}
+
+:where(a:visited:is(:hover, :focus)) {
+    text-decoration-color: var(--text);
+}
+
+// ------------- //
+// #endregion    //
+// ------------- //
+
+// --------------- //
+// #region buttons //
+// --------------- //
+
+:where(button) {
+    --bg: #{$button-bg};
+    --text: #{$button-text};
+    --padding: #{$button-padding};
+    --border-color: #{$button-border-color};
+
+    background: var(--bg);
+    color: var(--text);
+
+    padding-block: calc(var(--padding) / 2);
+    padding-inline: var(--padding);
+
+    border: $border-width $border-style var(--border-color);
+
+    cursor: pointer;
+}
+
+:where(button:disabled) {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+:where(button:not(:disabled):hover,
+    button:not(:disabled):focus) {}
+
+:where(button[type="button"]) {}
+
+:where(button[type="button"]:not(:disabled):hover,
+    button[type="button"]:not(:disabled):focus) {}
+
+:where(button[type="submit"]) {}
+
+:where(button[type="submit"]:not(:disabled):hover,
+    button[type="submit"]:not(:disabled):focus) {}
+
+// --------------- //
+// #endregion      //
+// --------------- //
+
+// --------------------- //
+// #region form-elements //
+// --------------------- //
+
+:where(label) {
+    width: max-content;
+}
+
+:where(input, textarea) {
+    --_bg: var(--neutral-100);
+    --_text: #{$text};
+    --_padding: #{$padding};
+    --_border-color: transparent;
+
+    background: var(--_bg);
+    color: var(--_text);
+
+    padding-block: calc(var(--_padding) / 2);
+    padding-inline: var(--_padding);
+
+    border: $border-width $border-style var(--_border-color);
+    border-radius: $border-radius-sm;
+
+    resize: none;
+}
+
+:where(input[type="checkbox"]:is(:hover)) {
+    cursor: pointer;
+}
+
+:where(input:focus) {
+    outline: none;
+}
+
+:where(textarea:not([rows])) {
+    min-height: 10rem;
+}
+
+.form {
+    --_gap: #{$gap-lg};
+    --_bg: linear-gradient(-45deg, #102D52 40.96%, #0F122E 80.68%);
+    --_padding: #{$padding-xl};
+
+    width: 100%;
+
+    background: var(--_bg);
+
+    padding: var(--_padding);
+    margin-block: $margin-xs;
+
+    font-size: $fs-paragraph;
+
+    border: $border-width $border-style var(--primary-400);
+    border-radius: $border-radius;
+
+    box-shadow: 0px 0px 16px 4px rgba(18, 18, 18, 0.25); // temp
+}
+
+.form_field {
+    --_gap: #{$gap-sm};
+}
+
+.form_label {
+    color: $text-inverse;
+
+    font-family: $ff-heading;
+
+    & > span {
+        color: var(--neutral-400);
+
+        font-size: $fs-small;
+        font-weight: $fw-default;
+        font-style: italic;
+
+        margin-left: $margin-sm;
+    }
+}
+
+.form_input {
+    position: relative;
+
+    & > input {
+        display: block;
+        width: 100%;
+
+        border: $border-width $border-style transparent;
+        border-radius: $border-radius
+    }
+}
+
+.form_toggle {
+    display: none; // don't have time to deal with this dumbfuck shit tonight, will deal with it another time
+
+    background: transparent;
+    color: $text;
+
+    position: absolute;
+    top: 50%;
+    right: $margin-sm;
+
+    padding: $padding-xs;
+
+    transform: translateY(-50%);
+
+    & > i {
+        pointer-events: none;
+    }
+}
+
+.form_errors {
+    --_color: var(--semantic-error-200);
+    color: var(--_color);
+
+    &:first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.form_submit {
+    --_gap: #{$gap};
+    --_bg: var(--primary-400);
+    --_text: #{$text};
+    --_padding: #{$padding};
+    --_border-color: var(--_bg);
+
+    min-height: 47px;
+
+    background: var(--_bg);
+    color: var(--_text);
+
+    padding-block: calc(var(--_padding) / 2);
+    padding-inline: var(--_padding);
+
+    font-family: $ff-heading;
+    font-size: $fs-paragraph;
+    font-weight: $fw-bold;
+
+    text-transform: capitalize;
+
+    border: $border-width $border-style var(--_border-color);
+    border-radius: $border-radius;
+}
+
+// --------------------- //
+// #endregion            //
+// --------------------- //
+
+:where(h1) {}
+
+:where(h2, h3, h4) {}
+
+.heading {
+    font-family: $ff-heading;
+    font-size: $fs-heading;
+    font-weight: $fw-bold;
+}
+
+.subheading {
+    font-family: $ff-paragraph;
+    font-size: $fs-paragraph;
+    font-weight: $fw-default;
+}
+
+:where(i) {
+    user-select: none;
+    pointer-events: none;
+}

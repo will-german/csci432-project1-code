@@ -1,0 +1,102 @@
+@use "../abstracts/" as *;
+
+// ========================= //
+// #region utilities/_layout //
+// ========================= //
+
+:where([grid], [grid*=""]) {
+    --_gap: var(--gap, 1em);
+
+    display: grid;
+    gap: var(--_gap);
+}
+
+:where([grid*="items-center"]) {
+    place-items: center;
+}
+
+:where([grid*="content-center"]) {
+    place-content: center;
+}
+
+
+:where([flex], [flex*=""]) {
+    --_gap: var(--gap, 1em);
+
+    display: flex;
+    column-gap: var(--_gap);
+    row-gap: calc(var(--_gap) / 2);
+}
+
+:where([flex*="col"]) {
+    flex-direction: column;
+}
+
+:where([flex*="row"]) {
+    flex-direction: row;
+}
+
+:where([flex*="col-reverse"]) {
+    flex-direction: column-reverse;
+}
+
+:where([flex*="row-reverse"]) {
+    flex-direction: row-reverse;
+}
+
+:where([flex*="align-start"]) {
+    align-items: flex-start;
+}
+
+:where([flex*="align-center"]) {
+    align-items: center;
+}
+
+:where([flex*="align-end"]) {
+    align-items: flex-end;
+}
+
+:where([flex*="justify-start"]) {
+    justify-content: flex-start;
+}
+
+:where([flex*="justify-center"]) {
+    justify-content: center;
+}
+
+:where([flex*="justify-end"]) {
+    justify-content: flex-end;
+}
+
+:where([flex*="space-around"]) {
+    justify-content: space-around;
+}
+
+:where([flex*="space-evenly"]) {
+    justify-content: space-evenly;
+}
+
+:where([flex*="space-between"]) {
+    justify-content: space-between;
+}
+
+
+:where([flow], [flow*=""]) {
+    --_gap: var(--gap, 1em);
+}
+
+:where([flow], [flow*=""]) > *:where(:not(:first-child)) {
+    --_gap: inherit;
+}
+
+:where([flow*="vertical"] > *:where(:not(:first-child))) {
+    margin-top: var(--_gap);
+}
+
+:where([flow*="horizontal"] > *:where(:not(:first-child))) {
+    margin-left: var(--_gap);
+}
+
+// ========================= //
+// #endregion                //
+// ========================= //

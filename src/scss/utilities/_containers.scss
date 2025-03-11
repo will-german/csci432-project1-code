@@ -1,0 +1,42 @@
+@use "../abstracts/" as *;
+
+:where([container="main"]) {
+    --_padding: #{$padding};
+    --_max-width: 80rem;
+
+    width: min(100% - var(--_padding), var(--_max-width));
+    min-height: 100vh;
+
+    padding-block: var(--_padding);
+    padding-inline: var(--_padding);
+    margin-inline: auto;
+}
+
+:where([container="header"]) {
+    --_padding: #{$padding};
+    --_max-width: 80rem;
+
+    width: min(100% - var(--_padding), var(--_max-width));
+    margin-inline: auto;
+}
+
+:where([container="social-media-feed"]) {
+    --_gap: var(--gap, 1em);
+    --_columns: 1;
+
+    --main-padding: #{$padding};
+
+    width: 100%;
+    height: min(100vh - (var(--main-padding) * 2));
+
+    display: grid;
+    grid-template-columns: repeat(var(--_columns), minmax(0, 1fr));
+    gap: var(--_gap);
+}
+
+@media screen and (min-width: 45em) {
+    :where([container="social-media-feed"]) {
+        --_columns: 3;
+        grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr) minmax(0, 0.5fr);
+    }
+}

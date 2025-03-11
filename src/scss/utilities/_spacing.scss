@@ -1,0 +1,93 @@
+@use "../abstracts/" as *;
+
+@each $size, $value in $size-map {
+
+    .margin-#{$size} {
+        margin: #{$value}
+    }
+
+    .margin-block-#{$size} {
+        margin-block: #{$value}
+    }
+
+    .margin-block-start-#{$size} {
+        margin-block-start: #{$value}
+    }
+
+    .margin-block-end-#{$size} {
+        margin-block-end: #{$value}
+    }
+
+    .margin-inline-#{$size} {
+        margin-inline: #{$value}
+    }
+
+    .margin-inline-start-#{$size} {
+        margin-inline-start: #{$value}
+    }
+
+    .margin-inline-end-#{$size} {
+        margin-inline-end: #{$value}
+    }
+
+    .margin-top-#{$size} {
+        margin-top: #{$value};
+    }
+
+    .margin-left-#{$size} {
+        margin-left: #{$value};
+    }
+
+    .margin-right-#{$size} {
+        margin-right: #{$value};
+    }
+
+    .margin-bottom-#{$size} {
+        margin-bottom: #{$value};
+    }
+
+    .padding-#{$size} {
+        padding: #{$value}
+    }
+
+    .padding-block-#{$size} {
+        padding-block: #{$value}
+    }
+
+    .padding-block-start-#{$size} {
+        padding-block-start: #{$value}
+    }
+
+    .padding-block-end-#{$size} {
+        padding-block-end: #{$value}
+    }
+
+    .padding-inline-#{$size} {
+        padding-inline: #{$value}
+    }
+
+    .padding-inline-start-#{$size} {
+        padding-inline-start: #{$value}
+    }
+
+    .padding-inline-end-#{$size} {
+        padding-inline-end: #{$value}
+    }
+
+    .padding-top-#{$size} {
+        padding-top: #{$value};
+    }
+
+    .padding-left-#{$size} {
+        padding-left: #{$value};
+    }
+
+    .padding-right-#{$size} {
+        padding-right: #{$value};
+    }
+
+    .padding-bottom-#{$size} {
+        padding-bottom: #{$value};
+    }
+
+}

@@ -1,0 +1,54 @@
+@use "sass:map";
+
+// ============================= //
+// #region abstracts/_typography //
+// ============================= //
+
+// might have to use a string() function to properly set up these fonts as the equotes are being removed from the outputs. This may be required with the font-family delcarations as well.
+$_display: "Rubik Doodle Shadow", "Londrina Shadow", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+
+$_display-2: "Londrina Shadow", "Rubik Doodle Shadow", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+
+$_sans: "Oswald", "Lato", Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
+$_serif: "cmu_serifroman", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+
+$font-family-map: (
+    "title": $_display,
+    "heading": $_sans,
+    "paragraph": $_serif,
+);
+
+$font-size-map: (
+    "300": clamp(0.75rem, 0.65rem + 0.25vw, 1rem),
+    "400": clamp(1rem, 0.95rem + 0.25vw, 1.25rem),
+    "500": clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem),
+    "600": clamp(1.5rem, 1.4rem + 0.5vw, 2rem),
+    "700": clamp(2rem, 1.9rem + 0.5vw, 2.5rem),
+    "800": clamp(2.5rem, 2.4rem + 0.5vw, 3rem),
+    "900": clamp(3rem, 2.8rem + 1vw, 4rem),
+);
+
+$font-weight-map: (
+    "200": 200,
+    "400": 400,
+    "700": 700,
+    "900": 900,
+);
+
+$line-height-map: (
+    "100": 0.95,
+    "200": 1.1,
+    "400": 1.6,
+    "600": 2.5,
+);
+
+$letter-spacing-map: (
+    "200": -0.02em,
+    "400": 0em,
+    "600": 0.02em,
+);
+
+// ============================= //
+// #endregion                    //
+// ============================= //
